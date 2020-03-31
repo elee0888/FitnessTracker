@@ -8,18 +8,18 @@ const WorkoutSchema= new Schema({
     },
 
     totalDuration:{
-        type:Number,
+        type: Number,
         default: 0
     },
 
     exercises: [
         {
-            type:Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Exercise"
         }
     ]
 });
 
-const Workout=mongoose.model("Workout", WorkoutSchema);
+const Workout= mongoose.model("Workout", WorkoutSchema);
 
-module.exports=Workout;
+module.exports= Workout;

@@ -3,11 +3,11 @@ const db= require("../models/models");
 let path= require("path");
 
 router.get("/stats", (req,res)=> {
-    res.sendFile(path.resolve("public/stats.html"));
+    res.sendFile(path.resolve("./public/stats.html"));
 });
 
 router.get("/exercise", (req,res)=>{
-    res.sendFile(path.resolve("public/exercise.html"));
+    res.sendFile(path.resolve("./public/exercise.html"));
 });
 
 router.get("/api/workouts", (req,res)=>{
@@ -24,7 +24,7 @@ router.get("/api/workouts", (req,res)=>{
 router.post("/api/workouts", ({body}, res)=>{
     db.Workout.create(body)
     .then(dbWorkout =>{
-        res,json(dbWorkout);
+        res.json(dbWorkout);
     })
     .catch(err =>{
         res.json(err);
@@ -42,9 +42,9 @@ router.put("/api/workouts/:id", (req,res)=>{
         };
 
         db.Workout.findByIdAndUpdate(filter, update, { new: true })
-        .then(exercise => {
-            console.log(exercise);
-            res.json(exercise);
+        .then(Exercise => {
+            console.log(Exercise);
+            res.json(Exercise);
         })
         .catch(err=> {
             res.json(err);
@@ -54,7 +54,7 @@ router.put("/api/workouts/:id", (req,res)=>{
 
 router.get("/api/workouts/range", (req, res)=>{
     db.Workout.find({})
-    .populate("exercises")
+    .populate("exercise")
     .then(data=> {
         res.json(data);
     })

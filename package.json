@@ -1,20 +1,25 @@
 {
-  "name": "FitnessTracker",
+  "name": "fitnesstracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js",
-    "seed": "node seeders/seed.js"
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elee0888/FitnessTracker.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elee0888/FitnessTracker/issues"
+  },
+  "homepage": "https://github.com/elee0888/FitnessTracker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.9.6",
-    "morgan": "^1.10.0",
-    "seed": "^0.4.4"
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0"
   }
 }

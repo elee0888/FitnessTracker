@@ -3,7 +3,7 @@ const express = require("express"),
  mongoose = require("mongoose"),
  routes = require("./routes/routes");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
